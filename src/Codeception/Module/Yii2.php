@@ -219,6 +219,7 @@ class Yii2 extends Framework implements ActiveRecord, PartedModule
             'SCRIPT_NAME' => $entryScript,
             'SERVER_NAME' => parse_url($entryUrl, PHP_URL_HOST),
             'SERVER_PORT' => parse_url($entryUrl, PHP_URL_PORT) ?: '80',
+            'REQUEST_URI'     => parse_url($entryUrl, PHP_URL_PATH) ?: '/',
             'HTTPS' => parse_url($entryUrl, PHP_URL_SCHEME) === 'https'
         ]);
     }
